@@ -1,406 +1,542 @@
-
 /* Reset dan global */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+{
+
+margin: 0;
+
+padding: 0;
+
+box-sizing: border-box;
+
 }
 
 body {
-    font-family: "Segoe UI", sans-serif;
-    background: linear-gradient(to bottom, #f0f4f8, #ffffff);
-    color: #333;
-    line-height: 1.6;
+
+font-family: "Segoe UI", sans-serif;
+
+background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+
+color: #333;
+
+line-height: 1.6;
+
 }
 
 .container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
+
+max-width: 1100px;
+
+margin: auto;
+
+padding: 20px;
+
 }
 
 /* Header */
+
 header {
-    background-color: #005f73;
-    color: white;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+background-color: #005f73;
+
+color: white;
+
+padding: 15px 0;
+
+position: sticky;
+
+top: 0;
+
+z-index: 1000;
+
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .header-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+
+display: flex;
+
+align-items: center;
+
+justify-content: space-between;
+
+flex-wrap: wrap;
+
 }
 
 .logo-title {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+
+display: flex;
+
+align-items: center;
+
+gap: 15px;
+
 }
 
 .logo-img {
-    width: 50px;
-    height: 50px;
+
+width: 50px;
+
+height: 50px;
+
 }
 
 /* Navigasi */
+
 .nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+
+list-style: none;
+
+display: flex;
+
+gap: 20px;
+
 }
 
 .nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
+
+color: white;
+
+text-decoration: none;
+
+font-weight: bold;
+
+transition: color 0.3s;
+
 }
 
 .nav-menu a:hover {
-    color: #ffdd57;
+
+color: #ffdd57;
+
 }
 
 /* Tombol Excel */
+
 .excel-btn {
-    background-color: #198754;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    transition: background-color 0.3s;
+
+background-color: #198754;
+
+color: white;
+
+border: none;
+
+padding: 10px 16px;
+
+border-radius: 5px;
+
+cursor: pointer;
+
+display: flex;
+
+align-items: center;
+
+gap: 8px;
+
+font-size: 14px;
+
+transition: background-color 0.3s;
+
 }
 
 .excel-btn:hover {
-    background-color: #157347;
+
+background-color: #157347;
+
 }
 
 .excel-btn img {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
+
+width: 20px;
+
+height: 20px;
+
+margin-right: 8px;
+
 }
 
 /* Form Input (index.html) */
+
 form {
-    background-color: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid #ddd;
-    margin-bottom: 30px;
+
+background-color: white;
+
+padding: 25px;
+
+border-radius: 12px;
+
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+border: 1px solid #ddd;
+
+margin-bottom: 30px;
+
 }
 
 form .form-group {
-    margin-bottom: 15px;
+
+margin-bottom: 15px;
+
 }
 
 form label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #004e64;
-    font-size: 15px;
+
+display: block;
+
+margin-bottom: 6px;
+
+font-weight: 600;
+
+color: #004e64;
+
+font-size: 15px;
+
 }
 
 form input,
+
 form select,
+
 form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: border 0.2s;
+
+width: 100%;
+
+padding: 12px;
+
+border: 1px solid #ccc;
+
+border-radius: 8px;
+
+font-size: 14px;
+
+transition: border 0.2s;
+
 }
 
 form input:focus,
+
 form select:focus,
+
 form textarea:focus {
-    border-color: #007f7f;
-    outline: none;
+
+border-color: #007f7f;
+
+outline: none;
+
 }
 
 form button {
-    background-color: #005f73;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+
+background-color: #005f73;
+
+color: white;
+
+padding: 12px 24px;
+
+border: none;
+
+border-radius: 6px;
+
+cursor: pointer;
+
+font-size: 16px;
+
+margin-top: 10px;
+
+transition: background-color 0.3s;
+
 }
 
 form button:hover {
-    background-color: #003f4f;
+
+background-color: #003f4f;
+
 }
 
 /* Layout dua kolom untuk form input */
+
 form.grid-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+
+display: grid;
+
+grid-template-columns: 1fr 1fr;
+
+gap: 20px;
+
 }
 
 form.grid-form .form-group {
-    margin-bottom: 0;
-    width: 100%;
+
+margin-bottom: 0;
+
+width: 100%;
+
 }
 
 form.grid-form .form-group input,
+
 form.grid-form .form-group select,
+
 form.grid-form .form-group textarea {
-    width: 100%;
-    box-sizing: border-box;
+
+width: 100%;
+
+box-sizing: border-box;
+
 }
 
 form.grid-form button {
-    grid-column: span 2;
-    justify-self: start;
+
+grid-column: span 2;
+
+justify-self: start;
+
 }
 
 .full-width {
-    grid-column: span 2;
+
+grid-column: span 2;
+
 }
 
 /* Tabel Data Siswa (menu-data-siswa.html) */
+
 table.display {
-    width: 100% !important;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 14px;
+
+width: 100% !important;
+
+border-collapse: collapse;
+
+margin-top: 20px;
+
+font-size: 14px;
+
 }
 
 table.display th,
+
 table.display td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-    vertical-align: top;
+
+padding: 10px;
+
+text-align: left;
+
+border: 1px solid #ddd;
+
+vertical-align: top;
+
 }
 
 table.display thead {
-    background-color: #0a9396;
-    color: white;
-}
-/* Reset dan global */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+background-color: #0a9396;
+
+color: white;
+
 }
 
-body {
-    font-family: "Segoe UI", sans-serif;
-    background: linear-gradient(to bottom, #f0f4f8, #ffffff);
-    color: #333;
-    line-height: 1.6;
+table.display tbody tr:nth-child(even) {
+
+background-color: #f0f0f0;
+
 }
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
+.dataTables_wrapper {
+
+overflow-x: auto;
+
 }
 
-/* Header */
-header {
-    background-color: #005f73;
-    color: white;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#tabel-siswa-utama_wrapper {
+
+max-width: 100%;
+
+overflow-x: auto;
+
 }
 
-.header-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+table button {
+
+background-color: #ae2012;
+
+color: white;
+
+border: none;
+
+padding: 5px 10px;
+
+border-radius: 4px;
+
+cursor: pointer;
+
 }
 
-.logo-title {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+table button:hover {
 
-.logo-img {
-    width: 50px;
-    height: 50px;
-}
+background-color: #9b1d10;
 
-/* Navigasi */
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.nav-menu a:hover {
-    color: #ffdd57;
-}
-
-/* Form Input (index.html) */
-form {
-    background-color: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid #ddd;
-    margin-bottom: 30px;
-}
-
-form .form-group {
-    margin-bottom: 15px;
-}
-
-form label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 600;
-    color: #004e64;
-    font-size: 15px;
-}
-
-form input,
-form select,
-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: border 0.2s;
-}
-
-form input:focus,
-form select:focus,
-form textarea:focus {
-    border-color: #007f7f;
-    outline: none;
-}
-
-form button {
-    background-color: #005f73;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-
-form button:hover {
-    background-color: #003f4f;
-}
-
-/* Layout dua kolom untuk form input */
-form.grid-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dua kolom default */
-    gap: 20px;
-}
-
-form.grid-form .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-form.grid-form .form-group label {
-    font-weight: 600;
-    font-size: 14px;
-}
-
-form.grid-form .form-group input,
-form.grid-form .form-group select,
-form.grid-form .form-group textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-}
-
-form.grid-form .form-group.full-width {
-    grid-column: span 2; /* Lebar penuh untuk elemen tertentu */
-}
-
-form.grid-form button {
-    grid-column: span 2;
-    padding: 12px 24px;
-    background-color: #005f73;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Perubahan untuk perangkat mobile */
-@media screen and (max-width: 768px) {
-    form.grid-form {
-        grid-template-columns: 1fr; /* Satu kolom untuk semua elemen */
-    }
-
-    form.grid-form .form-group {
-        flex-direction: row; /* Label dan input sejajar */
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    form.grid-form .form-group label {
-        flex: 0 0 40%; /* Lebar tetap untuk label */
-        text-align: left;
-    }
-
-    form.grid-form .form-group input,
-    form.grid-form .form-group select,
-    form.grid-form .form-group textarea {
-        flex: 1;
-        margin-left: 8px;
-    }
-
-    form.grid-form button {
-        justify-self: center;
-        width: 100%; /* Tombol memenuhi lebar */
-    }
 }
 
 /* Footer */
+
 footer {
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-    background-color: #eee;
-    font-size: 14px;
-    color: #555;
-}ze: 13px;
+
+text-align: center;
+
+padding: 15px;
+
+margin-top: 30px;
+
+background-color: #eee;
+
+font-size: 14px;
+
+color: #555;
+
+}
+
+/* Section Header */
+
+.section-header {
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+flex-wrap: wrap;
+
+margin-bottom: 15px;
+
+}
+
+.section-header h2 {
+
+font-size: 26px;
+
+color: #005f73;
+
+border-bottom: 2px solid #0a9396;
+
+padding-bottom: 5px;
+
+margin-bottom: 15px;
+
+}
+
+/* Responsif */
+
+@media screen and (max-width: 768px) {
+
+.nav-menu {
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: 10px;
+
+}
+
+
+
+.header-flex {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+
+.container {
+
+    padding: 10px;
+
+}
+
+
+
+.logo-title {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+}
+
+
+
+.excel-btn {
+
+    margin-top: 10px;
+
+    width: 100%;
+
+}
+
+
+
+table.display {
+
+    font-size: 12px;
+
+}
+
+}
+
+@media screen and (max-width: 600px) {
+
+form.grid-form {
+
+    grid-template-columns: 1fr;
+
+}
+
+
+
+form.grid-form button {
+
+    justify-self: stretch;
+
+}
+
+}
+
+/* Tambahan tabel wrapper */
+
+.table-container {
+
+overflow-x: auto;
+
+}
+
+/* Tombol hapus */
+
+.delete-btn {
+
+background-color: #e63946;
+
+color: white;
+
+border: none;
+
+padding: 6px 12px;
+
+border-radius: 4px;
+
+cursor: pointer;
+
+font-size: 13px;
+
 }
 
 .delete-btn:hover {
-    background-color: #c9302c;
+
+background-color: #c9302c;
+
 }
+
