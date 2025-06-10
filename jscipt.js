@@ -1,0 +1,6 @@
+document.getElementById("form-siswa").addEventListener("submit", ...
+$('#tabel-siswa-utama').DataTable({
+    responsive: true,
+    autoWidth: false,
+    ...
+});

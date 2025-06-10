@@ -1,0 +1,312 @@
+
+/* Reset dan global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(to bottom, #f0f4f8, #ffffff);
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #005f73;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Navigasi */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ffdd57;
+}
+
+/* Tombol Excel */
+.excel-btn {
+    background-color: #198754;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.excel-btn:hover {
+    background-color: #157347;
+}
+
+.excel-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+/* Form Input (index.html) */
+form {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+form .form-group {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #004e64;
+    font-size: 15px;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border 0.2s;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #007f7f;
+    outline: none;
+}
+
+form button {
+    background-color: #005f73;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #003f4f;
+}
+
+/* Layout dua kolom untuk form input */
+form.grid-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+form.grid-form .form-group {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+form.grid-form .form-group input,
+form.grid-form .form-group select,
+form.grid-form .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form.grid-form button {
+    grid-column: span 2;
+    justify-self: start;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+/* Tabel Data Siswa (menu-data-siswa.html) */
+table.display {
+    width: 100% !important;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+table.display th,
+table.display td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+table.display thead {
+    background-color: #0a9396;
+    color: white;
+}
+
+table.display tbody tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.dataTables_wrapper {
+    overflow-x: auto;
+}
+
+#tabel-siswa-utama_wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table button {
+    background-color: #ae2012;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+table button:hover {
+    background-color: #9b1d10;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    background-color: #eee;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Section Header */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-size: 26px;
+    color: #005f73;
+    border-bottom: 2px solid #0a9396;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .logo-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .excel-btn {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    table.display {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form.grid-form {
+        grid-template-columns: 1fr;
+    }
+
+    form.grid-form button {
+        justify-self: stretch;
+    }
+}
+
+/* Tambahan tabel wrapper */
+.table-container {
+    overflow-x: auto;
+}
+
+/* Tombol hapus */
+.delete-btn {
+    background-color: #e63946;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.delete-btn:hover {
+    background-color: #c9302c;
+}

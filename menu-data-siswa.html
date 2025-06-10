@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Siswa</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo-title">
+        <img src="images/logo.png" alt="Logo PKBM" class="logo-img" />
+        <h1>PKBM Al-Manshur</h1>
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="data-sekolah.html">Data Sekolah</a></li>
+          <li><a href="menu-data-siswa.html" class="active">Data Siswa</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="data-siswa">
+      <div class="section-header">
+        <h2>Data Siswa</h2>
+        <button class="excel-btn" onclick="downloadExcel()">
+          <img src="images/excel-icon.png" alt="Excel">
+          Unduh Excel
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table id="tabel-siswa-utama" class="display nowrap">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>NIK</th>
+              <th>Tempat Lahir</th>
+              <th>Tanggal Lahir</th>
+              <th>Alamat</th>
+              <th>Desa</th>
+              <th>Kecamatan</th>
+              <th>Kabupaten</th>
+              <th>Program</th>
+              <th>No HP</th>
+              <th>Nama Ayah</th>
+              <th>Nama Ibu</th>
+              <th>Koordinator</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="tabel-siswa">
+            <!-- Data akan diisi oleh JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 PKBM Al-Manshur. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("dataSiswa")) || [];
+    const tabel = document.getElementById("tabel-siswa");
+
+    function renderTable() {
+      tabel.innerHTML = "";
+      data.forEach((siswa, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${siswa.nama}</td>
+          <td>${siswa.nik}</td>
+          <td>${siswa.tempatLahir}</td>
+          <td>${siswa.tanggalLahir}</td>
+          <td>${siswa.alamat}</td>
+          <td>${siswa.desa}</td>
+          <td>${siswa.kecamatan}</td>
+          <td>${siswa.kabupaten}</td>
+          <td>${siswa.program}</td>
+          <td>${siswa.nohp}</td>
+          <td>${siswa.ayah}</td>
+          <td>${siswa.ibu}</td>
+          <td>${siswa.koordinator}</td>
+          <td><button onclick="hapusData(${index})" class="delete-btn">Hapus</button></td>
+        `;
+        tabel.appendChild(row);
+      });
+    }
+
+    function hapusData(index) {
+      if (confirm("Yakin ingin menghapus data ini?")) {
+        data.splice(index, 1);
+        localStorage.setItem("dataSiswa", JSON.stringify(data));
+        renderTable();
+        $('#tabel-siswa-utama').DataTable().clear().destroy();
+        inisialisasiDataTable(); // re-inisialisasi ulang
+      }
+    }
+
+    function downloadExcel() {
+      const worksheetData = data.map((siswa, index) => ({
+        "No": index + 1,
+        "Nama": siswa.nama,
+        "NIK": siswa.nik,
+        "Tempat Lahir": siswa.tempatLahir,
+        "Tanggal Lahir": siswa.tanggalLahir,
+        "Alamat": siswa.alamat,
+        "Desa": siswa.desa,
+        "Kecamatan": siswa.kecamatan,
+        "Kabupaten": siswa.kabupaten,
+        "Program": siswa.program,
+        "Nomor HP": siswa.nohp,
+        "Nama Ayah": siswa.ayah,
+        "Nama Ibu": siswa.ibu,
+        "Koordinator": siswa.koordinator
+      }));
+      const worksheet = XLSX.utils.json_to_sheet(worksheetData);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Data Siswa");
+      XLSX.writeFile(workbook, "data-siswa.xlsx");
+    }
+
+    function inisialisasiDataTable() {
+      $('#tabel-siswa-utama').DataTable({
+        responsive: true, // ✅ aktifkan fitur responsive
+        scrollX: true,    // ✅ biar tetap bisa scroll jika melebihi lebar layar
+        autoWidth: false,
+        paging: true,
+        language: {
+            search: "Cari:",
+            lengthMenu: "Tampilkan _MENU_ data",
+            info: "Menampilkan _START_ - _END_ dari _TOTAL_ data",
+            paginate: {
+        first: "Awal",
+        last: "Akhir",
+        next: "→",
+        previous: "←"
+        }
+    }
+    });
+
+    }
+
+    renderTable();
+    $(document).ready(inisialisasiDataTable);
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+</body>
+</html>
